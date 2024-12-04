@@ -32,6 +32,12 @@ builder.Services.AddDbContext<SksDbContext>(
 
 ### Миграции
 
+Устанавливаем `dotnet-ef`:
+
+```
+dotnet tool install --global dotnet-ef
+```
+
 Создание миграций:
 
 ```
