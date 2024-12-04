@@ -1,14 +1,14 @@
 ## hackaton huinit
 
 ### MySQL Server
-Нужно создать пользователя root_user с root правами:
+Нужно создать пользователя `root_user` с root правами:
 
 ```sql
 CREATE USER 'root_user' IDENTIFIED BY 'ip214';
 GRANT ALL PRIVILEGES ON * . * TO 'root_user';
 ```
 
-Подключаем MySQL в Program.cs:
+Подключаем MySQL в `Program.cs`:
 
 ```csharp
 var connection = builder.Configuration.GetConnectionString("SksDbContext");
@@ -22,7 +22,7 @@ builder.Services.AddDbContext<SksDbContext>(
     });
 ```
 
-Соединение находится в appsettings.Development.json:
+Соединение находится в `appsettings.Development.json`:
 
 ```json
 "ConnectionStrings": {
