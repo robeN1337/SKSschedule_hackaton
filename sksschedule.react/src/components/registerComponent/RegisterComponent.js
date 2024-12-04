@@ -1,5 +1,5 @@
 import React from 'react';
-import './RegisterComponent.css';
+//import s from './RegisterComponent.module.css';
 
 function RegisterComponent () {
     return (
@@ -7,9 +7,9 @@ function RegisterComponent () {
       <div className="register" >
         <div className="register_triangle"></div>
       
-        <h2 className="register-header">Регистрация</h2>
+        <h2 className="register_header">Регистрация</h2>
       
-        <form className="register-container">
+        <form className="register_container">
           <p><input type="email" placeholder="Email" /></p>
           <p><input type="username" placeholder="Username" /></p>
           <p><input type="password" placeholder="Password" /></p>

@@ -12,14 +12,14 @@ body {
 }
 
 /* Reset top and bottom margins from certain elements */
-.register-header,
+.register_header,
 .register p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
 /* The triangle form is achieved by a CSS hack */
-.register-triangle {
+.register_triangle {
   width: 0;
   margin-right: auto;
   margin-left: auto;
@@ -27,7 +27,7 @@ body {
   border-bottom-color: #28d;
 }
 
-.register-header {
+.register_header {
   background: #28d;
   padding: 20px;
   font-size: 1.4em;
@@ -37,7 +37,7 @@ body {
   color: #fff;
 }
 
-.register-container {
+.register_container {
   background: #ebebeb;
   padding: 12px;
 }

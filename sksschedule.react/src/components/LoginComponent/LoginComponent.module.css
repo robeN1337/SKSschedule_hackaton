@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
-  background: #456;
-  font-family: 'Open Sans', sans-serif;
+  background-color: white;
 }
+
 
 .login {
   width: 400px;
@@ -11,23 +11,23 @@ body {
   font-size: 16px;
 }
 
+.login_base {
+  background-color: black;
+  height: max-content;
+  width: auto;
+}
+
 /* Reset top and bottom margins from certain elements */
-.login-header,
+.login_header,
 .login p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
 /* The triangle form is achieved by a CSS hack */
-.login-triangle {
-  width: 0;
-  margin-right: auto;
-  margin-left: auto;
-  border: 12px solid transparent;
-  border-bottom-color: #28d;
-}
 
-.login-header {
+
+.login_header {
   background: #28d;
   padding: 20px;
   font-size: 1.4em;
@@ -37,12 +37,12 @@ body {
   color: #fff;
 }
 
-.login-container {
+.login_container {
   background: #ebebeb;
   padding: 12px;
 }
 
-/* Every row inside .login-container is defined with p tags */
+/* Every row inside .login_container is defined with p tags */
 .login p {
   padding: 12px;
 }
