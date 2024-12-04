@@ -2,7 +2,7 @@
 {
     public class Ekz : Event
     {
-        public Guid Id { get; set; }
-        public Subject Name { get; set; }
+        public Guid SubjectId { get; set; }
+        public Subject? Subject { get; set; }
     }
 }

@@ -8,5 +8,7 @@
         public string? Description { get; set; }
         public string? Place { get; set; }
 
+        public List<Timetable> Timetables { get; set; } = new();
+
     }
 }
