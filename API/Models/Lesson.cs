@@ -2,7 +2,10 @@
 {
     public class Lesson : Event
     {
-        public Subject Name { get; set; }
-        public Prep PrepId { get; set; }
+        public Guid SubjectId { get; set; }
+        public Subject? Subject { get; set; }
+
+        public Guid PrepId { get; set; }
+        public Prep? Prep { get; set; } 
     }
 }
