@@ -2,10 +2,10 @@
 {
     public class Group
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
 
-        public string Speciality {  get; set; } = string.Empty ;
+        public Speciality Speciality {  get; set; }
 
         public string Curator {  get; set; } = string.Empty ;
     }

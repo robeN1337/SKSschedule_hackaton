@@ -1,8 +1,8 @@
 ﻿namespace API.Models
 {
-    public class Ekz : Event
+    public class Lesson : Event
     {
-        public Guid Id { get; set; }
         public Subject Name { get; set; }
+        public Prep PrepId { get; set; }
     }
 }
