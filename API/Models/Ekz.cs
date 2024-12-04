@@ -1,6 +1,7 @@
 ﻿namespace API.Models
 {
-    public class Ekz
+    public class Ekz : Event
     {
+
     }
 }
