@@ -2,6 +2,8 @@
 {
     public class Stud : User
     {
-        public Group Group { get; set; }
+        public Guid GruppaId { get; set; }
+        public Group? Group { get; set; }
+
     }
 }
