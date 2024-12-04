@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API
 {
-    public class BaseDbContext : DbContext
+    public class SksDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Stud> Students { get; set; }
