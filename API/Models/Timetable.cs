@@ -14,4 +14,6 @@ namespace API.Models
         public TimeOnly Time_start { get; set; }
         public TimeOnly Time_end { get; set; }
     }
+
+
 }

@@ -5,6 +5,10 @@ namespace API
 {
     public class SksDbContext : DbContext
     {
+        public SksDbContext(DbContextOptions<SksDbContext> options)
+            : base(options)
+        { }
+
         public DbSet<User> Users { get; set; }
         public DbSet<Stud> Students { get; set; }
         public DbSet<Prep> Teachers { get; set; }
@@ -20,6 +24,10 @@ namespace API
         public DbSet<Mera> Mera { get; set; }
         public DbSet<Timetable> Timetable { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Timetable>().HasKey(u => new { u.GroupId, u.EventId, u.Date, u.Time_start});
+        }
 
     }
 }
