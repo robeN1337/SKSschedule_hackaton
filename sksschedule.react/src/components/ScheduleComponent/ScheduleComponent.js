@@ -65,15 +65,27 @@ const [users, setUsers] = useState();
     
     function postClick() {
 
+        try {   
+            httpClient.post("http://localhost:5007/api/User", {
+                guid: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                username: "String",
+                email: "string",
+                password: "ffasfasdfas"
+            }).then(response => {
+                console.log(response);
+            })
+        } catch (error) {
+            console.log(error);
+        }
         
-        httpClient.post("http://localhost:5007/api/User", {
-            guid: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            username: "String",
-            email: "string",
-            password: "ffasfasdfas"
-        }).then(response => {
-            console.log(response);
-        })
+        // httpClient.post("http://localhost:5007/api/User", {
+        //     guid: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        //     username: "String",
+        //     email: "string",
+        //     password: "ffasfasdfas"
+        // }).then(response => {
+        //     console.log(response);
+        // })
 
         
 
