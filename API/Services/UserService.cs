@@ -1,12 +1,16 @@
 ﻿using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace API.Services
 {
     public class UserService
     {
         private readonly DbSksContext _db = new DbSksContext();
+
+        public UserService()
+        {}
 
         public async Task<User> createUser(User user)
         {
@@ -31,6 +35,7 @@ namespace API.Services
         {
             return await _db.Users
                 .AsNoTracking()
+                .IgnoreAutoIncludes()
                 .ToListAsync();
         }
 

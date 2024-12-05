@@ -8,9 +8,7 @@ namespace API.Models;
 public partial class DbSksContext : DbContext
 {
     public DbSksContext()
-    {
-    }
-
+    {}
     public DbSksContext(DbContextOptions<DbSksContext> options)
         : base(options)
     {
