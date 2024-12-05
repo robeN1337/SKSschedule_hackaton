@@ -3,14 +3,16 @@
 ## Установка
 
 1. Установить Node.js
+   
 ```https://nodejs.org/en/download/package-manager```
 
 2. Клонировать репозиторий
+
 ```git clone https://github.com/robeN1337/SKSschedule_hackaton.git```
 
-4. Создать БД. Скрипт создания находится по пути "API/db.sql"
+3. Создать БД. Скрипт создания находится по пути "API/db.sql"
    
-5. Нужно создать пользователя `root_user` с root правами:
+4. Нужно создать пользователя `root_user` с root правами:
 
 ```sql
 CREATE USER 'root_user' IDENTIFIED BY 'ip214';
