@@ -8,7 +8,7 @@ CREATE USER 'root_user' IDENTIFIED BY 'ip214';
 GRANT ALL PRIVILEGES ON * . * TO 'root_user';
 ```
 
-MySQL код базы данных находится в "API/db.sql"
+MySQL скрипт БД находится в "API/db.sql"
 
 Подключаем MySQL в `Program.cs`:
 
