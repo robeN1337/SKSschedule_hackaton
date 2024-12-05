@@ -3,6 +3,10 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+
+node_modules/
+.angular
+
 # dotenv files
 .env
 
@@ -325,6 +329,29 @@ paket-files/
 
 # FAKE - F# Make
 .fake/
+
+generate-react-cli.json
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 
 # CodeRush personal settings
 .cr/personal
