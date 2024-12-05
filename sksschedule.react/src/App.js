@@ -1,23 +1,27 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/HeaderComponent/Header";
+import Footer from "./components/FooterComponent/Footer";
+import Home from "./components/HomeComponent/Home";
+import LoginComponent from "./components/LoginComponent/LoginComponent";
+import ScheduleComponent from "./components/ScheduleComponent/ScheduleComponent";
+import ErrorComponent from "./components/ErrorComponent/ErrorComponent";
 
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        
-       
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} errorElement={<ErrorComponent />} />
+          <Route path="/login" element={<LoginComponent />} errorElement={<ErrorComponent />}  />
+          <Route path="/schedule" element={<ScheduleComponent />} errorElement={<ErrorComponent />} />
+          
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
-
-
-  
-}
+};
 
 export default App;

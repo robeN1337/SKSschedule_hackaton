@@ -1,0 +1,16 @@
+.home {
+    padding: 20px;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .news-section {
+    margin-top: 20px;
+  }
+  

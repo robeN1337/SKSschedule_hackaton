@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import "./ScheduleComponent.css";
 //import './Raspisanie.css';
 
 import axios from "axios"
