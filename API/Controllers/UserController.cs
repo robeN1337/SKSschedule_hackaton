@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    //[Route("api/Users")]
+    //[Route("api/User")]
     [ApiController]
     public class UserController : Controller
     {
@@ -19,7 +19,7 @@ namespace API.Controllers
             _service = service;
         }
 
-        // GET: api/Users/
+        // GET: api/User/
         [HttpGet]
         public async Task<ActionResult<List<User>>> getAllUsers()
         {
@@ -30,14 +30,14 @@ namespace API.Controllers
             return await _service.getAllUsers();
         }
 
-        // GET: api/Users/{login}
+        // GET: api/User/{login}
         [HttpGet("{login}")]
         public async Task<ActionResult<User>> getUserByLogin(string login)
         {
             return await _service.getUserByLogin(login);
         }
 
-        // GET: api/Users/auth?login=a&password=b
+        // GET: api/User/auth?login=a&password=b
         [HttpGet("auth")]
         public async Task<ActionResult<User>> GetByEmailAndPassword(string login, string password)
         {
@@ -52,20 +52,21 @@ namespace API.Controllers
             }
         }
 
+        // POST: api/User/
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser(User user)
         {
             return Ok(_service.createUser(user));
         }
 
-        // PUT api/<UserController>/5
+        // PUT api/User/
         [HttpPut("{id}")]
-        public async Task<ActionResult> updateUser(User user, Guid id)
+        public async Task<ActionResult> updateUser(User user)
         {
             return Ok(_service.updateUser(user));
         }
 
-        // DELETE api/<UserController>/5
+        // DELETE api/User/
         [HttpDelete("{login}")]
         public async Task<ActionResult> deleteUser(string login)
         {
