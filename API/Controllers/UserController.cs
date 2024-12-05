@@ -7,94 +7,69 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Route("api/Users")]
+    [Route("api/[controller]")]
+    //[Route("api/Users")]
     [ApiController]
     public class UserController : Controller
     {
-        // GET: api/Users/
-        /*[HttpGet]
-        public async Task<ActionResult<List<User>>> getAllUsers()
+        private readonly UserService _service;
+
+        public UserController(UserService service)
         {
-            return await UserService.;
+            _service = service;
         }
 
-        
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        // GET: api/Users/
+        [HttpGet]
+        public async Task<ActionResult<List<User>>> getAllUsers()
         {
-            if (_context.Users == null)
+            if (await _service.getCountUsers() == 0)
             {
                 return NotFound();
             }
-            return await _context.Users.ToListAsync();
-        }*/
-
-        // GET: UserController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            return await _service.getAllUsers();
         }
 
-        // GET: UserController/Create
-        public ActionResult Create()
+        // GET: api/Users/{login}
+        [HttpGet("{login}")]
+        public async Task<ActionResult<User>> getUserByLogin(string login)
         {
-            return View();
+            return await _service.getUserByLogin(login);
         }
 
-        // POST: UserController/Create
+        // GET: api/Users/auth?login=a&password=b
+        [HttpGet("auth")]
+        public async Task<ActionResult<User>> GetByEmailAndPassword(string login, string password)
+        {
+            var user = await _service.GetByEmailAndPassword(login, password);
+            if (user != null)
+            {
+                return Ok(user);
+            }
+            else
+            {
+                return Problem("Не удается найти пользователя!");
+            }
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult<User>> CreateUser(User user)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok(_service.createUser(user));
         }
 
-        // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
+        // PUT api/<UserController>/5
+        [HttpPut("{id}")]
+        public async Task<ActionResult> updateUser(User user, Guid id)
         {
-            return View();
+            return Ok(_service.updateUser(user));
         }
 
-        // POST: UserController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // DELETE api/<UserController>/5
+        [HttpDelete("{login}")]
+        public async Task<ActionResult> deleteUser(string login)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: UserController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: UserController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok(_service.deleteUser(login));
         }
     }
 }
