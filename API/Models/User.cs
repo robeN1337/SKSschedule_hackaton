@@ -22,4 +22,5 @@ public partial class User
     public virtual Role Role { get; set; } = null!;
 
     public virtual ICollection<Subject> Subjects { get; set; } = new List<Subject>();
+
 }
