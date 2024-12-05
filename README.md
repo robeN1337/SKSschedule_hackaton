@@ -8,6 +8,8 @@ CREATE USER 'root_user' IDENTIFIED BY 'ip214';
 GRANT ALL PRIVILEGES ON * . * TO 'root_user';
 ```
 
+MySQL код базы данных находится в "API/db.sql"
+
 Подключаем MySQL в `Program.cs`:
 
 ```csharp
@@ -30,25 +32,4 @@ builder.Services.AddDbContext<SksDbContext>(
   }
 ```
 
-### Миграции
 
-Устанавливаем `dotnet-ef`:
-
-```
-dotnet tool install --global dotnet-ef
-```
-
-Создание миграций:
-
-```
-dotnet ef migrations add initial -s API -p API
-```
-
-Применение миграций:
-
-```
-dotnet ef database update -s API -p API
-```
-
-
-###
