@@ -40,4 +40,16 @@ builder.Services.AddDbContext<SksDbContext>(
   }
 ```
 
+6. Заходим в директорию со склонированным репозиторием через Powershell или терминал VS Code (powershell):
 
+```cd путь_до_папки_с_репозиторием/SKSschedule_hackaton/sksschedule.react```
+
+7. Устанавливаем необходимые пакеты для работы:
+
+```npm install```
+
+8. После установки прописываем команду для запуска:
+   
+```npm start```
+
+9. После старта сервер запускается по адресу http://localhost:3000
